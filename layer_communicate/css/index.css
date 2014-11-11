@@ -1,0 +1,23 @@
+html, body {
+    overflow-x:hidden
+}
+#up_layer {
+    background-color:green;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 44px;
+    font-size: 18px;
+    position:relative;
+}
+#down_layer {
+    background-color:red;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 44px;
+    font-size: 18px;
+    position:relative;
+}
