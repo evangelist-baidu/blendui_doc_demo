@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider Demo</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/crema.css">
+    <script src="js/blend.js"></script>
+    <script src="js/all.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .slider-control-1 {
+            position: absolute;
+            top: 220px;
+            left: 0px;
+            width: 100%;
+        }
+
+        .slider-control-2 {
+            position: absolute;
+            top: 250px;
+            left: 0px;
+            width: 100%;
+        }
+
+        .slider-control-1 .slider-pager {
+            height: 20px;
+            display: inline-block;
+            width: 32%;
+            margin: 0;
+            vertical-align: bottom;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="pages navbar-through">
+    <div class="page page-on-center">
+        <div class="slider-control-1">
+            <div class="slider-pager" id="slider-pager-left">Left</div>
+            <div class="slider-pager" id="slider-pager">1</div>
+            <div class="slider-pager" id="slider-pager-right">Right</div>
+        </div>
+        <div class="slider-control-2">
+            <div id="slider-pager-to">Slider Pager To 2</div>
+        </div>
+    </div>
+</div>
+<script>
+    var images = [
+        {"url": "img/list.png"},
+        {"url": "http://static.wenku.bdimg.com/topic/wapTopics/old_09_02.jpg"},
+        {"url": "http://static.wenku.bdimg.com/topic/wapTopics/new_03_02.jpg"},
+        {"url": 'http://static.wenku.bdimg.com/topic/wapTopics/jingpinshichang.jpg'}
+    ];
+
+    document.addEventListener("blendready", function () {
+        slider = new Blend.ui.Slider({
+            "id": "test",
+            "bgColor": "#cccccc",
+            "images": images,
+            "height": 200,
+            "top": 0,
+            "left": 0,
+            hasIndicator: true,
+            inactiveColor: "#ebebeb",
+            activeColor: "#3c9c76",
+            unitSize: 16,
+            unitSpace: 10,
+            "slider": function (e) {
+                //手动翻页时打印当前幻灯片的编号
+                $('#slider-pager').html(e.data.index);
+            }
+        });
+
+    });
+
+    $('document').ready(function () {
+
+        $('#slider-pager-left').click(function (e) {
+            if (slider) {
+                slider.prev();
+            }
+        });
+        $('#slider-pager-right').click(function (e) {
+            if (slider) {
+                slider.next();
+            }
+        });
+
+        $('#slider-pager-to').click(function (e) {
+            if (slider) {
+                slider.slideTo(2);
+            }
+        });
+    });
+</script>
+</body>
+</html>

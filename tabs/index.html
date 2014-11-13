@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs Demo</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/crema.css">
+    <script src="js/blend.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        #nav {
+            display: block;
+        }
+        #nav>ul {
+            height: 42px;
+            display: box;
+            display: -webkit-box;
+            list-style:none;
+            padding: 0;
+            margin:0;
+        }
+        #nav>ul>li {
+            -webkit-box-flex: 1;
+            position: relative;
+        }
+        #nav>ul>li>a {
+            font-size: 16px;
+            display: block;
+            width: 40px;
+            height: 42px;
+            line-height: 42px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .on{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+<div class="pages navbar-through">
+    <div class="page page-on-center">
+        <div id="nav">
+            <ul>
+                <li id="tab1" class="on"><a href="#">Tab1</a></li>
+                <li id="tab2"><a href="#">Tab2</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
