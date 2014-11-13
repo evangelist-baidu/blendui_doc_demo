@@ -1,7 +1,7 @@
-//Blend.lightInit({
-//    ak:'XkC0UKL8Z0cEP5zqKHuc8lIt', //轻应用apikey，请参考《获取API Key》文档
-//    module:["blendui"]//根据需要添加模块到数组中即可
-//});
+Blend.lightInit({
+    ak:'XkC0UKL8Z0cEP5zqKHuc8lIt', //轻应用apikey，请参考《获取API Key》文档
+    module:["blendui"]//根据需要添加模块到数组中即可
+});
 
 document.addEventListener("blendready", function () {
     var main = Blend.ui;
@@ -15,6 +15,12 @@ document.addEventListener("blendready", function () {
             top: 200
         });
 
+        //事件不响应
+        //$('#notifyBtn',dom).click(function(e){
+        //    alert('click!');
+        //    var msgContent = $('#input_msg').val();
+        //    Blend.ui.fire("sendMsg", "subLayerId",{content:msgContent});
+        //});
         $('#notifyBtn',dom).on("click",function(e){
             alert('click!');
             var msgContent = $('#input_msg').val();
