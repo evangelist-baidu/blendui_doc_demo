@@ -1,3 +1,8 @@
+Blend.lightInit({
+    ak: "QdSaUGlNp6c7Zg0zzE9Xcqon", //轻应用apikey，请参考《获取API Key》文档
+    module: ["blendui"]//根据需要添加模块到数组中即可
+});
+
 document.addEventListener("blendready", function () {
 
     Blend.ui.layerInit("0", function (dom) {
@@ -8,8 +13,7 @@ document.addEventListener("blendready", function () {
                 {
                     "id": 'contentA',
                     "url": 'contentA.html',
-                    "active": true,
-                    "autoload": true //通过autoload来配置是否自动加载
+                    "active": true
                 },
                 {
                     id: 'contentB',
