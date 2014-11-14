@@ -15,18 +15,10 @@ document.addEventListener("blendready", function () {
             top: 200
         });
 
-        //事件不响应
-        //$('#notifyBtn',dom).click(function(e){
-        //    alert('click!');
-        //    var msgContent = $('#input_msg').val();
-        //    Blend.ui.fire("sendMsg", "subLayerId",{content:msgContent});
-        //});
         $('#notifyBtn',dom).on("click",function(e){
-            alert('click!');
             var msgContent = $('#input_msg').val();
             Blend.ui.fire("sendMsg", "subLayerId",{content:msgContent});
         });
-
     });
 
     Blend.ui.layerInit("subLayerId", function (dom) {
