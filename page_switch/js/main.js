@@ -4,20 +4,18 @@ Blend.lightInit({
 });
 
 document.addEventListener("blendready", function () {
+    var page;
     Blend.ui.layerInit("0", function (dom) {
         $('#btn-jump', dom).click(function (e) {
-            console.log('点击');
-            if(Blend.ui.get('contentLayerId')){
-                console.log('存在页面');
-                Blend.ui.get('contentLayerId').in();
+            if(page){
+                page.in();
             }else{
-                console.log('新建页面');
-                var page = new Blend.ui.Layer({
+                page = new Blend.ui.Layer({
                     "id": "contentLayerId",
                     "url": "content.html",
-                    "duration": 200
+                    "duration": 200,
+                    "active":true
                 });
-                page.in();
             }
         });
     });

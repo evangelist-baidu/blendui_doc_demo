@@ -24,7 +24,7 @@ document.addEventListener("blendready", function () {
             activeColor: "#3c9c76",
             unitSize: 16,
             unitSpace: 10,
-            "slider": function (e) {
+            "slide": function (e) {
                 //手动翻页时打印当前幻灯片的编号
                 $('#slider-pager').html(e.data.index);
             }
